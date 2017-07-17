@@ -8,7 +8,13 @@ PACKAGES = [
 ]
 
 PACKAGE_CLASSIFIERS = [
-    'Programming Language :: Python :: 2.7'
+    'Programming Language :: Python :: 2.7',
+    'Development Status :: 4 - Beta'
+]
+
+PACKAGE_KEYWORDS = [
+    'presto',
+    'wrapper'
 ]
 
 readme_filename = os.path.join(this_dir,'README.md')
@@ -28,6 +34,7 @@ setup(
     license='LICENSE',
     description='Python wrapper for running queries on Presto server',
     packages=PACKAGES,
+    keyswords=PACKAGE_KEYWORDS,
     long_description=PACKAGE_LONG_DESCRIPTION,
     install_requires=PACKAGE_INSTALL_REQUIRES,
     classifiers=PACKAGE_CLASSIFIERS,
