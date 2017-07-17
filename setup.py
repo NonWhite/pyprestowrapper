@@ -27,7 +27,7 @@ with open(requirements_filename) as f:
 
 setup(
     name='pypresto',
-    version='0.1.1',
+    version='0.1.2',
     author='NonWhite',
     author_email='wperezurcia@gmail.com',
     url='https://github.com/NonWhite/pyprestowrapper',
