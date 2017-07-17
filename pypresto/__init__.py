@@ -1,4 +1,4 @@
-from pypresto import PrestoConnection
+from pypresto.connection import PrestoConnection
 
 __all__ = [
     'connection'
