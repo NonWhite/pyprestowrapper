@@ -25,7 +25,7 @@ class PrestoConnection :
 
     def send_query(self, sql_query, auth=False):
         req_url = os.path.join(self.presto_server,'v1/statement')
-    if auth:
+        if auth:
             authentication = HTTPBasicAuth(self.user, self.password)
             response = requests.post(req_url, headers=self.__headers, data=sql_query, auth=authentication)
         else:
