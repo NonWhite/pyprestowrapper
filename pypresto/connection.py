@@ -8,7 +8,7 @@ from requests.auth import HTTPBasicAuth
 
 class PrestoConnection :
 
-    def __init__(self, host, user, catalog, port=8080, schema='default',password=None):
+    def __init__(self, host, user, catalog, port=8080, schema='default', password=None):
         self.presto_server = '%s:%s' % (host,port)
         self.user = user
         self.password = password
@@ -23,7 +23,7 @@ class PrestoConnection :
             'X-Presto-User': self.user
         }
 
-    def send_query(self,sql_query,auth=False):
+    def send_query(self, sql_query, auth=False):
         req_url = os.path.join(self.presto_server,'v1/statement')
     if auth:
             authentication = HTTPBasicAuth(self.user, self.password)
