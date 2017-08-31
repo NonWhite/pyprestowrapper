@@ -58,7 +58,7 @@ class PrestoConnection :
             response.raise_for_status()
         response = response.json()
         if response.get('error',None) :
-            raise Exception(response['error'])
+            raise Exception(response['error']['message'])
         return response
 
     def run_query(self,sql_query) :
