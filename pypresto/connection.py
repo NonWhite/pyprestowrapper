@@ -33,7 +33,8 @@ class PrestoConnection :
         req_url = os.path.join(self.presto_server,'v1/statement')
         args = {
             'req_url': req_url,
-            'data': sql_query
+            'data': sql_query,
+            'method': 'POST'
         }
         return self.make_request(**args)
 
