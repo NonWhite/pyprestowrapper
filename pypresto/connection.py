@@ -8,7 +8,7 @@ from requests.auth import HTTPBasicAuth
 
 class PrestoConnection :
 
-    def __init(self,host,user,catalog,port=8080,schema='default',password=None) :
+    def __init__(self,host,user,catalog,port=8080,schema='default',password=None) :
         self.presto_server = '%s:%s' % (host,port)
         self.user = user
         self.password = password
