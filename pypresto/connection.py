@@ -61,7 +61,7 @@ class PrestoConnection :
             raise Exception(response['error']['message'])
         return response
 
-    def run_query(self,sql_query) :
+    def run_query(self,sql_query,ignore_empty=False) :
         response = self.send_query(sql_query)
         series = []
         columns = []
@@ -77,10 +77,12 @@ class PrestoConnection :
                     series.append(copy(serie))
                 #print 'Getting data (rows: %s)' % len(series)
                 time.sleep(1)
+            elif 'columns' in response :
+                columns = columns or [col['name'] for col in response['columns']]
             else:
                 #print 'Running query'
                 time.sleep(5)
-        df = pandas.DataFrame(series)
-        if df.empty :
+        df = pandas.DataFrame(series,columns=columns)
+        if df.empty and not ignore_empty :
             raise Exception('No data returned')
         return df
