@@ -17,4 +17,4 @@ Package for making queries on Presto server
 	from pypresto import PrestoConnection
 	conn = PrestoConnection(host, user, catalog, port, schema, password)
 	query = 'select * from my_table limit 1'
-	conn.run_query(query, auth=True)
+	conn.run_query(query)
